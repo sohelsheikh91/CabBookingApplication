@@ -35,7 +35,7 @@ class CabBookingApplicationTests {
 
         Rider abhishek = riderDatabase.add("Abhishek", Gender.M, 23, new Location(0.0,0.0));
         Rider rahul = riderDatabase.add("Rahul", Gender.M, 29, new Location(10.0,0.0));
-        Rider nandini = riderDatabase.add("Nandini", Gender.F, 22, new Location(15.0,6.0));
+        Rider nandini = riderDatabase.add("Nandini", Gender.F, 22, new Location(10.0,6.0));
 
         Vehicle vehicle1 = new Cab(VehicleType.CAR,"Swift, KA-01-12345");
         driverDatabase.add("Driver1",Gender.M, 22, new Location(10.0,1.0), vehicle1);

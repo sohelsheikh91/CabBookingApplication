@@ -64,6 +64,7 @@ public class CabService implements VehicleService{
 
             riderDatabase.update(rider.getId(), rider);
             driverDatabase.update(driver.getId(), driver);
+            driver.setIsAvailable(false);
 
             System.out.println("Ride Started with "+ driver.getName());
         }else
