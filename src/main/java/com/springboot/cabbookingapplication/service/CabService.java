@@ -18,23 +18,21 @@ public class CabService implements VehicleService{
     private static Map<Integer, List<Trip>> trips = new HashMap<>();
     private static Double totalEarningByAllRiders = 0.0;
 
-    private DriverRepository driverDatabase;
+    private DriverRepository driverRepository;
 
-    private RiderRepository riderDatabase;
+    private RiderRepository riderRepository;
 
     private BillService billService;
 
-    public CabService(DriverRepository driverDatabase, RiderRepository riderDatabase, BillService billService) {
-        this.driverDatabase = driverDatabase;
-        this.riderDatabase = riderDatabase;
+    public CabService(DriverRepository driverRepository, RiderRepository riderRepository, BillService billService) {
+        this.driverRepository = driverRepository;
+        this.riderRepository = riderRepository;
         this.billService = billService;
     }
-
-
-
+    
     public List<Driver> findRide(Location location) {
 
-        List<Driver> driverList = driverDatabase.getCabs(location, TRIP_MATCHING_DISTANCE);
+        List<Driver> driverList = driverRepository.getCabs(location, TRIP_MATCHING_DISTANCE);
         if(driverList != null) {
             System.out.println("Cab is Available");
             return driverList;
@@ -61,8 +59,8 @@ public class CabService implements VehicleService{
             rider.setLocation(destination);
             driver.setLocation(destination);
 
-            riderDatabase.update(rider.getId(), rider);
-            driverDatabase.update(driver.getId(), driver);
+            riderRepository.update(rider.getId(), rider);
+            driverRepository.update(driver.getId(), driver);
             driver.setIsAvailable(false);
 
             System.out.println("Ride Started with "+ driver.getName());
