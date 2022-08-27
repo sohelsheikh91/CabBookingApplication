@@ -3,9 +3,8 @@ package com.springboot.cabbookingapplication.service;
 import com.springboot.cabbookingapplication.exceptions.NoRideFoundException;
 import com.springboot.cabbookingapplication.exceptions.NoTripFoundException;
 import com.springboot.cabbookingapplication.model.*;
-import com.springboot.cabbookingapplication.repositories.DriverDatabase;
-import com.springboot.cabbookingapplication.repositories.RiderDatabase;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.springboot.cabbookingapplication.repositories.DriverRepository;
+import com.springboot.cabbookingapplication.repositories.RiderRepository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,13 +18,13 @@ public class CabService implements VehicleService{
     private static Map<Integer, List<Trip>> trips = new HashMap<>();
     private static Double totalEarningByAllRiders = 0.0;
 
-    private DriverDatabase driverDatabase;
+    private DriverRepository driverDatabase;
 
-    private RiderDatabase riderDatabase;
+    private RiderRepository riderDatabase;
 
     private BillService billService;
 
-    public CabService(DriverDatabase driverDatabase, RiderDatabase riderDatabase, BillService billService) {
+    public CabService(DriverRepository driverDatabase, RiderRepository riderDatabase, BillService billService) {
         this.driverDatabase = driverDatabase;
         this.riderDatabase = riderDatabase;
         this.billService = billService;

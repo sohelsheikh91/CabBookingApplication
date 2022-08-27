@@ -3,7 +3,6 @@ package com.springboot.cabbookingapplication.repositories;
 import com.springboot.cabbookingapplication.exceptions.DriverNotFoundException;
 import com.springboot.cabbookingapplication.exceptions.NoRideFoundException;
 import com.springboot.cabbookingapplication.model.*;
-import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class DriverDatabase {
+public class DriverRepository {
 
     private static Map<Integer, Driver> drivers = new HashMap<>();
     private static Integer userId = 0;

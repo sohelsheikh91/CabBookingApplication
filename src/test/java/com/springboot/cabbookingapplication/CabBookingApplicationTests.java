@@ -2,8 +2,8 @@ package com.springboot.cabbookingapplication;
 
 import com.springboot.cabbookingapplication.exceptions.NoRideFoundException;
 import com.springboot.cabbookingapplication.model.*;
-import com.springboot.cabbookingapplication.repositories.DriverDatabase;
-import com.springboot.cabbookingapplication.repositories.RiderDatabase;
+import com.springboot.cabbookingapplication.repositories.DriverRepository;
+import com.springboot.cabbookingapplication.repositories.RiderRepository;
 import com.springboot.cabbookingapplication.service.BillService;
 import com.springboot.cabbookingapplication.service.CabService;
 import org.junit.jupiter.api.BeforeEach;
@@ -19,15 +19,15 @@ import static org.junit.jupiter.api.Assertions.*;
 class CabBookingApplicationTests {
     CabService cabService;
     BillService billService;
-    DriverDatabase driverDatabase;
-    RiderDatabase riderDatabase;
+    DriverRepository driverDatabase;
+    RiderRepository riderDatabase;
 
     @BeforeEach
     void setUp() {
 
         billService = new BillService();
-        driverDatabase = new DriverDatabase();
-        riderDatabase = new RiderDatabase();
+        driverDatabase = new DriverRepository();
+        riderDatabase = new RiderRepository();
         cabService = new CabService(driverDatabase,riderDatabase,billService);
     }
     @Test

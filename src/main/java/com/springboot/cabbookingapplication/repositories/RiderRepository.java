@@ -9,7 +9,7 @@ import com.springboot.cabbookingapplication.model.User;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RiderDatabase {
+public class RiderRepository {
 
     private static Map<Integer, User> riders = new HashMap<>();
     private static Integer userId = 0;
