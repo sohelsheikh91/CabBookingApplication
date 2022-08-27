@@ -61,7 +61,7 @@ class CabBookingApplicationTests {
         Location nandiniLocation = nandini.getLocation();
         driverList = cabService.findRide(nandiniLocation);
 
-        Location nandiniDestination = new Location(15.0,3.0);
+        Location nandiniDestination = new Location(25.0,3.0);
         cabService.chooseRide(nandini, nandiniDestination, driverList);
 
         System.out.println("Bill of nandini is " +cabService.calculateBill(nandini));
